@@ -1,4 +1,4 @@
-﻿pipeline {
+pipeline {
     agent any
 
     environment {
@@ -8,9 +8,10 @@
     }
 
     stages {
+
         stage('Checkout') {
             steps {
-                checkout scm
+                echo 'Source code retrieved from GitHub'
             }
         }
 
@@ -47,6 +48,7 @@
         success {
             echo 'Pipeline completed successfully.'
         }
+
         failure {
             echo 'Pipeline failed. Check the stage that reported an error.'
         }
