@@ -23,7 +23,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                bat 'docker run --rm %IMAGE_NAME%:%BUILD_NUMBER% pytest -v'
+                bat 'docker run --rm %IMAGE_NAME%:%BUILD_NUMBER% python -m pytest -v'
             }
         }
 
@@ -54,3 +54,4 @@ pipeline {
         }
     }
 }
+
